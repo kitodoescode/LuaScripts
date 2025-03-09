@@ -5,7 +5,7 @@ local function spoofx(string spoofname, int version)
   local hook = hookfunction(x, function() -- use hook to return the spoofed name when the function "identifyexecutor()" is detected
     print(spoofname, version) -- prints the spoofed name
   end)
-  local hook = hookfunction(y, function() -- use hook to return the spoofed name when the function "identifyexecutor()" is detected
+  local hook2 = hookfunction(y, function() -- use hook to return the spoofed name when the function "identifyexecutor()" is detected
     print(spoofname) -- prints the spoofed name
   end)
 end
