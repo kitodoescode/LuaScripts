@@ -39,7 +39,7 @@ local function createToast()
     Icon.Parent = Container
     
     local Title = Instance.new("TextLabel")
-    Title.Name = "Pandora."
+    Title.Name = "Title"
     Title.Size = UDim2.new(0, 200, 0, 25)
     Title.Position = UDim2.new(0, 60, 0, 15)
     Title.BackgroundTransparency = 1
@@ -50,7 +50,7 @@ local function createToast()
     Title.Parent = Container
     
     local Description = Instance.new("TextLabel")
-    Description.Name = "Pandora attached successfully!"
+    Description.Name = "Description"
     Description.Size = UDim2.new(0, 200, 0, 25)
     Description.Position = UDim2.new(0, 60, 0, 40)
     Description.BackgroundTransparency = 1
@@ -97,4 +97,5 @@ end
 return ToastNotification
 ]]
 
-return loadstring(source)()
+local ToastNotification = loadstring(source)()
+ToastNotification:Show("Pandora", "Pandora attached successfully!", 5)
