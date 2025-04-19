@@ -97,6 +97,6 @@ end
 return ToastNotification
 ]]
 
-warn("Pandora Loaded.")
 local ToastNotification = loadstring(source)()
 ToastNotification:Show("Pandora", "Pandora attached successfully!", 5)
+warn("Pandora Loaded.")
