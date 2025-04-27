@@ -2565,7 +2565,7 @@ function Luna:CreateWindow(WindowSettings)
 	Luna:Notification({ 
 	Title = "Ember Hub",
 	Icon = "verified",
-	Content = "Discord Invite Copied!",
+	Content = "Discord Invite Copied!"
 })
     local response = HttpService:RequestAsync({
         Url = 'http://127.0.0.1:6463/rpc?v=1',
