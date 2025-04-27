@@ -2499,6 +2499,7 @@ function Luna:CreateWindow(WindowSettings)
 	function Window:CreateHomeTab(HomeTabSettings)
 
 		HomeTabSettings = Kwargify({
+		        Name = "Home",
 			Icon = 1,
 			SupportedExecutors = {"Ash", "Pulse", "Pandora", "Visual", "Swift", "Velocity", "Xeno", "Nezur", "Vega X", "Delta", "Codex"}, 
 			DiscordInvite = "emberhub"
