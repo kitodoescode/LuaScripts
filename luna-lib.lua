@@ -2561,9 +2561,9 @@ function Luna:CreateWindow(WindowSettings)
 
 		HomeTabPage.detailsholder.dashboard.Discord.Interact.MouseButton1Click:Connect(function()
 			setclipboard(tostring("https://discord.gg/"..HomeTabSettings.DiscordInvite)) -- Hunter if you see this I added copy also was too lazy to send u msg
-			if request then
-        request({
-            Url = 'http://127.0.0.1:6463/rpc?v=1',
+local HttpService = game:GetService("HttpService")
+        local response = HttpService:RequestAsync({
+            Url = 'http://127.0.0.1:6463/rpc?v=1',  -- Change this to the actual endpoint if needed
             Method = 'POST',
             Headers = {
                 ['Content-Type'] = 'application/json',
@@ -2575,9 +2575,9 @@ function Luna:CreateWindow(WindowSettings)
                 args = {code = HomeTabSettings.DiscordInvite}
             })
         })
-    else
-        warn("Request function is not defined!")
-    end
+        
+        -- Log the response for debugging
+        print("Response: ", response.StatusCode, response.Body)
 		end)
 
 		local friendsCooldown = 0
