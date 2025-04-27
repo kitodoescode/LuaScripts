@@ -2560,25 +2560,22 @@ function Luna:CreateWindow(WindowSettings)
 		-- Stolen From Sirius Stuff Begins Here
 
 		HomeTabPage.detailsholder.dashboard.Discord.Interact.MouseButton1Click:Connect(function()
-			setclipboard(tostring("https://discord.gg/"..HomeTabSettings.DiscordInvite)) -- Hunter if you see this I added copy also was too lazy to send u msg
-local HttpService = game:GetService("HttpService")
-        local response = HttpService:RequestAsync({
-            Url = 'http://127.0.0.1:6463/rpc?v=1',  -- Change this to the actual endpoint if needed
-            Method = 'POST',
-            Headers = {
-                ['Content-Type'] = 'application/json',
-                Origin = 'https://discord.com'
-            },
-            Body = HttpService:JSONEncode({
-                cmd = 'INVITE_BROWSER',
-                nonce = HttpService:GenerateGUID(false),
-                args = {code = HomeTabSettings.DiscordInvite}
-            })
+    setclipboard(tostring("https://discord.gg/"..HomeTabSettings.DiscordInvite))
+    local response = HttpService:RequestAsync({
+        Url = 'http://127.0.0.1:6463/rpc?v=1',
+        Method = 'POST',
+        Headers = {
+            ['Content-Type'] = 'application/json',
+            Origin = 'https://discord.com'
+        },
+        Body = HttpService:JSONEncode({
+            cmd = 'INVITE_BROWSER',
+            nonce = HttpService:GenerateGUID(false),
+            args = {code = HomeTabSettings.DiscordInvite}
         })
-        
-        -- Log the response for debugging
-        print("Response: ", response.StatusCode, response.Body)
-		end)
+    })
+end)
+
 
 		local friendsCooldown = 0
 		local function getPing() return math.clamp(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue(), 10, 700) end
