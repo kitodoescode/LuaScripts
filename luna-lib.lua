@@ -2562,7 +2562,7 @@ function Luna:CreateWindow(WindowSettings)
 
 		HomeTabPage.detailsholder.dashboard.Discord.Interact.MouseButton1Click:Connect(function()
     setclipboard(tostring("https://discord.gg/"..HomeTabSettings.DiscordInvite))
-		Luna:Notification({ 
+	Notification({ 
 	Title = "Ember Hub",
 	Icon = "verified",
 	ImageSource = "Material",
